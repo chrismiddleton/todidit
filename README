@@ -1,0 +1,11 @@
+# Setup
+
+To set up the app:
+
+1. Add a settings.json to the install folder with the following properties: database_server, database_user, database_password, and database_name.
+
+2. Run the setup.php script from the command line.
+
+3. Link the web/ directory into your web server, e.g. run from the document root:
+
+	ln -s path/to/todidit/web todidit
