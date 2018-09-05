@@ -10,7 +10,7 @@ class AppSetup {
 
 	public static function run () {
 		$settings = App::getSettings();
-		$conn = mysqli_connect($settings['database_server'], $settings['database_user'], $settings['database_password']);
+		$conn = App::getConn($useDb = false);
 		if (!$conn) {
 			throw new ProgramErrorException("Failed to connect to mysql server");
 		}

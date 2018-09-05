@@ -7,10 +7,10 @@ class App {
 	private static $conn = null;
 	private static $settings = null;
 	
-	public static function getConn () {
+	public static function getConn ($useDb = true) {
 		if (!isset(self::$conn)) {
 			$settings = self::getSettings();
-			self::$conn = mysqli_connect($settings['database_server'], $settings['database_user'], $settings['database_password'], $settings['database_name']);
+			self::$conn = Sql::connect($settings["database_server"], $settings["database_user"], $settings["database_password"], $useDb ? $settings["database_name"] : null);
 		}
 		return self::$conn;
 	}
